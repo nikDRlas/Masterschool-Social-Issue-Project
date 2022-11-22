@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -23,7 +24,10 @@ const Navbar = () => {
                     <p className='hover:text-darkGrayishBlue'>About us</p>
                     {/* <p >|</p> */}
                     <p className='hover:text-darkGrayishBlue pl-3 py-2' style={{ borderLeftWidth: '1px' }} >Sign in</p>
-                    <button className='hover:text-darkBlue text-white p-1 px-2 rounded-md bg-oliveGreen'>Sign up</button>
+                    <Link to='/signup'>
+                        <button className='hover:text-darkBlue text-white p-1 px-2 rounded-md bg-oliveGreen'>Sign up</button>
+
+                    </Link>
                 </div>
                 <button className='md:hidden'>
                     {showMenu && <MdClose onClick={toggle} />}
@@ -39,8 +43,10 @@ const Navbar = () => {
                 >
                     <p className='hover:text-darkGrayishBlue'>How does it work?</p>
                     <p className='hover:text-darkGrayishBlue'>About us</p>
-                    <p className='hover:text-darkGrayishBlue' >Sign up</p>
                     <p className='hover:text-darkGrayishBlue'>Sign In</p>
+                    <Link to='/signup'>
+                        <p className='hover:text-darkGrayishBlue' >Sign up</p>
+                    </Link>
                 </div>
 
             }
