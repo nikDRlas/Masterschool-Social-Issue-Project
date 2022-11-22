@@ -35,7 +35,7 @@ const Navbar = () => {
             {showMenu &&
                 <div
                     id="menu"
-                    className="sm:hidden items-center divide-y-4 flex-col flex mt-3 space-y-3 bg-white sm:w-auto sm:self-center drop-shadow-md text-xs"
+                    className="md:hidden items-center divide-y-4 flex-col flex mt-3 space-y-3 bg-white sm:w-auto sm:self-center drop-shadow-md text-xs"
                 >
                     <p className='hover:text-darkGrayishBlue'>How does it work?</p>
                     <p className='hover:text-darkGrayishBlue'>About us</p>
