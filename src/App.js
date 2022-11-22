@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="items-center container mx-auto p-6">
+      <div className="items-center mx-auto p-6">
         <h1 className="text-xl font-bold underline content-center">Super cool awesome project - Niklas Ronnen Snir</h1>
         <img style={{height: 200}} src={image} alt="Construction worker" />
         <p>Please be patient! The project is still under construction!</p>
