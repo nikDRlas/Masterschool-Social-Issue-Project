@@ -1,6 +1,7 @@
 import Button from "../buttons/button";
+import Navbar from "../navbar/Navbar";
 import "./main.css";
-import Navbar from "../Navbar";
+
 
 const Main = () => {
   return (
