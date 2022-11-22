@@ -4,7 +4,7 @@ const Button = ({butname}) => {
     return (
         
         <div className="button-container">
-            <button className={butname}>{butname} <i className="arrow right"></i></button>
+            <button id='button-home' className={butname}>{butname} <i className="arrow right"></i></button>
         </div>
      );
 }
