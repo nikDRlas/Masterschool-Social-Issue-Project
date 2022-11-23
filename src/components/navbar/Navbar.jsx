@@ -52,7 +52,9 @@ const Navbar = () => {
         >
           <p className="hover:text-darkGrayishBlue">How does it work?</p>
           <p className="hover:text-darkGrayishBlue">About us</p>
-          <p className="hover:text-darkGrayishBlue">Sign In</p>
+          <Link to="/signin">
+            <p className="hover:text-darkGrayishBlue">Sign In</p>
+          </Link>
           <Link to="/signup">
             <p className="hover:text-darkGrayishBlue">Sign up</p>
           </Link>
