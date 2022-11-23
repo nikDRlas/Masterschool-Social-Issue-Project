@@ -25,12 +25,14 @@ const Navbar = () => {
           <p className="hover:text-darkGrayishBlue">How does it work?</p>
           <p className="hover:text-darkGrayishBlue">About us</p>
           {/* <p >|</p> */}
-          <p
-            className="hover:text-darkGrayishBlue pl-3 py-2"
-            style={{ borderLeftWidth: "1px" }}
-          >
-            Sign in
-          </p>
+          <Link to="/signin">
+            <p
+              className="hover:text-darkGrayishBlue pl-3 py-2"
+              style={{ borderLeftWidth: "1px" }}
+            >
+              Sign in
+            </p>
+          </Link>
           <Link to="/signup">
             <button className="hover:text-darkBlue text-white p-1 px-2 rounded-md bg-oliveGreen">
               Sign up
