@@ -44,7 +44,7 @@ function Signin() {
       </div>
       <form
         onSubmit={onSubmit}
-        className="flex flex-col items-center  mx-auto my-4 w-96 sm:w-96 xsm:w-auto"
+        className="flex flex-col items-center  mx-auto my-4 w-auto sm:w-96 "
       >
         <input
           onChange={(e) => {
