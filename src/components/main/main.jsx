@@ -8,15 +8,15 @@ import Navbar from "../navbar/Navbar";
 
 const Main = () => {
   const { user } = useAuth();
-  const [load, setLoad] =  useState(false)
+  const [load, setLoad] =  useState(true)
 
   useEffect(() => {
     if (user){
-      setLoad(true);
+      setLoad(false);
     }
   }, [user]);
 
-  if (!load) {
+  if (load) {
     return (
     <>
       <DotLoader>
