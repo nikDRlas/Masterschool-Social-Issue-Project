@@ -1,10 +1,30 @@
+import { useEffect, useState } from 'react';
+import DotLoader from "react-spinners/ClipLoader";
+import LogedNavbar from "../../components/navbar/LogedNavbar";
+import { useAuth } from "../../context/AuthContext";
 import Button from "../buttons/button";
 import Navbar from "../navbar/Navbar";
-import { useAuth } from "../../context/AuthContext";
-import LogedNavbar from "../../components/navbar/LogedNavbar";
+
 
 const Main = () => {
   const { user } = useAuth();
+  const [load, setLoad] =  useState(true)
+
+  useEffect(() => {
+    if (user){
+      setLoad(false);
+    }
+  }, [user]);
+
+  if (load) {
+    return (
+    <>
+      <DotLoader>
+      </DotLoader>
+    </>
+  )
+  }
+
   return (
     <>
       {user ? <LogedNavbar /> : <Navbar />}
