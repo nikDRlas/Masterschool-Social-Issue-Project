@@ -3,14 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
 import { useAuth } from "../../context/AuthContext";
-import { auth } from "../../utils/firebase";
 
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { login } = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
@@ -37,7 +36,7 @@ function Signin() {
 
   return (
     <>
-      {auth.currentUser ? <LogedNavbar /> : <Navbar />}
+      {user ? <LogedNavbar /> : <Navbar />}
       <div className="top-text text-center mt-12">
         <h1 className="font-medium text-7xl">
           Welcome Back<span className="text-darkGreen">!</span>

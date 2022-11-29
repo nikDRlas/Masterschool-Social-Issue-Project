@@ -2,12 +2,11 @@ import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../utils/firebase";
 import { useAuth } from "../../context/AuthContext";
 
 const LogedNavbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
   const toggle = () => {
     setShowMenu(!showMenu);
   };
@@ -32,12 +31,11 @@ const LogedNavbar = () => {
             className="hover:text-darkGrayishBlue mx-2 pl-6 py-2"
             style={{ borderLeftWidth: "1px" }}
           >
-            Hello {auth.currentUser.email}
+            Hello {user.email}
           </p>
           <button
             onClick={() => {
               logout();
-              navigate("/signin");
             }}
             className="hover:text-darkBlue text-white mx-2 p-1 px-2 rounded-md bg-oliveGreen"
           >
@@ -70,3 +68,27 @@ const LogedNavbar = () => {
 };
 
 export default LogedNavbar;
+
+const userDummy = [
+  {
+    fullName: "snir azran",
+    email: "balla@gmail.com",
+    phone: "0503943329",
+  },
+];
+
+const postDummy = [
+  {
+    city: "haifa",
+    arriveDate: "15/11/2022",
+    leavingDate: "23/11/2022",
+    numOfGuests: 1,
+    aboutYou: "i am snir",
+    babies: "yes",
+    wifi: "yes",
+    ac: "no",
+    shower: "yes",
+    tv: "no",
+    pets: "no",
+  },
+];

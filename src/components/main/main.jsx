@@ -1,14 +1,13 @@
 import Button from "../buttons/button";
 import Navbar from "../navbar/Navbar";
 import { useAuth } from "../../context/AuthContext";
-import { auth } from "../../utils/firebase";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 
 const Main = () => {
+  const { user } = useAuth();
   return (
     <>
-      {console.log(auth.currentUser)}
-      {auth.currentUser ? <LogedNavbar /> : <Navbar />}
+      {user ? <LogedNavbar /> : <Navbar />}
       <div className="main-container h-screen ">
         <div className="image-container bg-hero-pattern bg-cover bg-no-repeat h-max bg-center">
           <div className="text-container pt-28 w-2/3 text-center m-auto lg:w-3/5 sm:w-4/5 xsm:w-4/5">
