@@ -21,7 +21,6 @@ const router = createBrowserRouter([
     path: "/login",
     element: <App />,
   },
-
   {
     path: "/findyourhost",
     element: <SearchHost />,

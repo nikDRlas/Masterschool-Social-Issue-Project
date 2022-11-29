@@ -1,6 +1,8 @@
 import Button from "../buttons/button";
 import Navbar from "../navbar/Navbar";
+import SearchHost from "../SearchHost/SearchHost";
 import "./main.css";
+
 
 
 const Main = () => {
