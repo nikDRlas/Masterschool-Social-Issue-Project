@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
+import LogedNavbar from "../../components/navbar/LogedNavbar";
 import { useAuth } from "../../context/AuthContext";
 
 function Signup() {
@@ -10,7 +11,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { register } = useAuth();
+  const { register, user } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
@@ -37,7 +38,7 @@ function Signup() {
 
   return (
     <>
-      <Navbar />
+      {user ? <LogedNavbar /> : <Navbar />}
       <div className="top-text text-center mt-12">
         <h1 className="font-medium text-7xl">
           Hello<span className="text-darkGreen">!</span>

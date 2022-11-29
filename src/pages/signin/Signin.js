@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
 import { useAuth } from "../../context/AuthContext";
 
@@ -8,7 +9,7 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { login } = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
@@ -35,7 +36,7 @@ function Signin() {
 
   return (
     <>
-      <Navbar />
+      {user ? <LogedNavbar /> : <Navbar />}
       <div className="top-text text-center mt-12">
         <h1 className="font-medium text-7xl">
           Welcome Back<span className="text-darkGreen">!</span>
