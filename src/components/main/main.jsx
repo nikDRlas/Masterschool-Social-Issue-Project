@@ -1,12 +1,16 @@
 import Button from "../buttons/button";
 import Navbar from "../navbar/Navbar";
-import "./main.css";
+import { useAuth } from "../../context/AuthContext";
+import { auth } from "../../utils/firebase";
+import LogedNavbar from "../../components/navbar/LogedNavbar";
 
+import "./main.css";
 
 const Main = () => {
   return (
     <>
-      <Navbar />
+      {console.log(auth.currentUser)}
+      {auth.currentUser ? <LogedNavbar /> : <Navbar />}
       <div className="main-container">
         <div className="image-container">
           <div className="text-container">
