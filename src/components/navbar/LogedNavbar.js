@@ -55,12 +55,10 @@ const LogedNavbar = () => {
         >
           <p className="hover:text-darkGrayishBlue">How does it work?</p>
           <p className="hover:text-darkGrayishBlue">About us</p>
-          <Link to="/signin">
-            <p className="hover:text-darkGrayishBlue">Sign In</p>
-          </Link>
-          <Link to="/signup">
-            <p className="hover:text-darkGrayishBlue">Sign up</p>
-          </Link>
+          <p className="hover:text-darkGrayishBlue"> Hello {user.email}</p>
+          <p onClick={logout} className="hover:text-darkGrayishBlue">
+            Log out
+          </p>
         </div>
       )}
     </nav>

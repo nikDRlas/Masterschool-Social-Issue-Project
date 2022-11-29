@@ -1,10 +1,12 @@
 import Button from "../buttons/button";
+import { useState } from "react";
 import Navbar from "../navbar/Navbar";
 import { useAuth } from "../../context/AuthContext";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 
 const Main = () => {
   const { user } = useAuth();
+
   return (
     <>
       {user ? <LogedNavbar /> : <Navbar />}
