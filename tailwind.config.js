@@ -10,6 +10,9 @@ module.exports = {
       xl: "1440px",
     },
     extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/images/background.png')",
+      },
       colors: {
         oliveGreen: "hsl(118, 36%, 42%)",
         brightRed: "hsl(12, 88%, 59%)",
@@ -24,6 +27,8 @@ module.exports = {
         veryLightGreen: "#F2E8CF",
         lightGray: "#919191",
         veryLightGray: "#BFBFBF",
+        hostBtn: "#a7c957",
+        hostedBtn: "#f2e8cf",
       },
     },
   },

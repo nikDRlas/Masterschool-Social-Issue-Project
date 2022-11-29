@@ -14,22 +14,22 @@ const LogedNavbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="realtive items-center mx-auto p-6">
-      <div className="flex items-center justify-between">
+    <nav className="realtive mx-auto p-6">
+      <div className="flex content-center items-center justify-between">
         <div className="pt-2">
           <Link to={"/"}>
-            <p className="text-2xl font-bold">
+            <p className="text-3xl font-bold">
               Wegot
-              <span className=" text-oliveGreen font-bold text-2xl">U</span>
+              <span className=" text-oliveGreen font-bold text-3xl">U</span>
             </p>
           </Link>
         </div>
         <div className="hidden pt-2 md:flex items-center justify-between gap-3 text-sm">
-          <p className="hover:text-darkGrayishBlue">How does it work?</p>
-          <p className="hover:text-darkGrayishBlue">About us</p>
+          <p className="hover:text-darkGrayishBlue mx-2">How does it work?</p>
+          <p className="hover:text-darkGrayishBlue mx-2">About us</p>
           {/* <p >|</p> */}
           <p
-            className="hover:text-darkGrayishBlue pl-3 py-2"
+            className="hover:text-darkGrayishBlue mx-2 pl-6 py-2"
             style={{ borderLeftWidth: "1px" }}
           >
             Hello {auth.currentUser.email}
@@ -39,7 +39,7 @@ const LogedNavbar = () => {
               logout();
               navigate("/signin");
             }}
-            className="hover:text-darkBlue text-white p-1 px-2 rounded-md bg-oliveGreen"
+            className="hover:text-darkBlue text-white mx-2 p-1 px-2 rounded-md bg-oliveGreen"
           >
             Log Out
           </button>
