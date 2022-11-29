@@ -1,6 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import {
   auth,
+<<<<<<< HEAD
+=======
+  signOut,
+>>>>>>> c9827c454be3b9d511cd600c3c24a0c41639634d
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "../utils/firebase";
@@ -22,8 +26,13 @@ const AuthProvider = ({ children }) => {
     await signInWithEmailAndPassword(auth, email, password);
   };
 
+<<<<<<< HEAD
   const signout = async () => {
     await auth.logout();
+=======
+  const logout = async () => {
+    await signOut(auth);
+>>>>>>> c9827c454be3b9d511cd600c3c24a0c41639634d
   };
 
   useEffect(() => {
@@ -39,7 +48,11 @@ const AuthProvider = ({ children }) => {
     user,
     register,
     login,
+<<<<<<< HEAD
     signout,
+=======
+    logout,
+>>>>>>> c9827c454be3b9d511cd600c3c24a0c41639634d
   };
 
   return (

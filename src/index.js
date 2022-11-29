@@ -7,6 +7,7 @@ import SearchHost from "./components/SearchHost/SearchHost";
 import AuthProvider from "./context/AuthContext";
 import "./index.css";
 import Signup from "./pages/signup/Signup";
+import Signin from "./pages/signin/Signin";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,8 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
-    path: "/login",
-    element: <App />,
+    path: "/signin",
+    element: <Signin />,
   },
   {
     path: "/findyourhost",
