@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
 import Main from "./components/main/main";
 import SearchHost from "./components/SearchHost/SearchHost";
 import AuthProvider from "./context/AuthContext";
 import "./index.css";
 import Signup from "./pages/signup/Signup";
 import Signin from "./pages/signin/Signin";
+import AddListing from "./pages/addilsting/AddListing";
+import ShowListing from "./pages/showlisting/ShowListing";
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,16 @@ const router = createBrowserRouter([
     element: <Signin />,
   },
   {
+
     path: "/findyourhost",
     element: <SearchHost />,
+    path: "/addListing",
+    element: <AddListing />,
+  },
+  {
+    path: "/showlisting",
+    element: <ShowListing/>,
+
   },
 ]);
 
