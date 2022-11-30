@@ -37,6 +37,8 @@ function Signin() {
   return (
     <>
       {user ? <LogedNavbar /> : <Navbar />}
+      {!user ? (
+        <>
       <div className="top-text text-center mt-12">
         <h1 className="font-medium text-7xl">
           Welcome Back<span className="text-darkGreen">!</span>
@@ -74,8 +76,23 @@ function Signin() {
             Sign up
           </Link>
         </p>
-      </div>
-    </>
+      </div> </>) :         
+        <div className="top-text text-center mt-12">
+          <h1 className="font-medium text-7xl">
+          Already signed in<span className="text-darkGreen">!</span>
+          </h1>
+          <div className="bottom-text text-center pb-12 ">
+            <p className="text-lightGray mt-5 ">
+            {"would you like to post a listing?"}{" "}
+              <Link className="text-darkGreen" to="/addlisting">
+              Add
+              </Link>
+            </p>
+
+            </div>
+          </div>
+        }
+    </> 
   );
 }
 

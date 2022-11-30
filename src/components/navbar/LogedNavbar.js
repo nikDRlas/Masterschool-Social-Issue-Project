@@ -27,15 +27,18 @@ const LogedNavbar = () => {
           <p className="hover:text-darkGrayishBlue mx-2">How does it work?</p>
           <p className="hover:text-darkGrayishBlue mx-2">About us</p>
           {/* <p >|</p> */}
+          <Link to='/showlisting'>
           <p
             className="hover:text-darkGrayishBlue mx-2 pl-6 py-2"
             style={{ borderLeftWidth: "1px" }}
           >
             Hello {user.email}
           </p>
+          </Link>
           <button
             onClick={() => {
               logout();
+              navigate('/')
             }}
             className="hover:text-darkBlue text-white mx-2 p-1 px-2 rounded-md bg-oliveGreen"
           >
@@ -69,26 +72,26 @@ const LogedNavbar = () => {
 
 export default LogedNavbar;
 
-const userDummy = [
-  {
-    fullName: "snir azran",
-    email: "balla@gmail.com",
-    phone: "0503943329",
-  },
-];
+// const userDummy = [
+//   {
+//     fullName: "snir azran",
+//     email: "balla@gmail.com",
+//     phone: "0503943329",
+//   },
+// ];
 
-const postDummy = [
-  {
-    city: "haifa",
-    arriveDate: "15/11/2022",
-    leavingDate: "23/11/2022",
-    numOfGuests: 1,
-    aboutYou: "i am snir",
-    babies: "yes",
-    wifi: "yes",
-    ac: "no",
-    shower: "yes",
-    tv: "no",
-    pets: "no",
-  },
-];
+// const postDummy = [
+//   {
+//     city: "haifa",
+//     arriveDate: "15/11/2022",
+//     leavingDate: "23/11/2022",
+//     numOfGuests: 1,
+//     aboutYou: "i am snir",
+//     babies: "yes",
+//     wifi: "yes",
+//     ac: "no",
+//     shower: "yes",
+//     tv: "no",
+//     pets: "no",
+//   },
+// ];
