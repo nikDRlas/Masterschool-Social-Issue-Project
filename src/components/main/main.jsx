@@ -1,10 +1,8 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import { useAuth } from "../../context/AuthContext";
 // import Button from "../buttons/button";
 import Navbar from "../navbar/Navbar";
-
-
 
 const Main = () => {
   const { user } = useAuth();
@@ -15,7 +13,6 @@ const Main = () => {
   // useEffect(() => {
   //   setUserlogged(user ? true : false)
   // }, [user]);
-
 
   return (
     <>
@@ -31,16 +28,16 @@ const Main = () => {
             </h2>
           </div>
           <div className="button-container flex flex-col justify-center items-center gap-12 pb-28 mt-12">
-            <button onClick={() => {
-              if (user) {
-                navigate('/addlisting')
-              }
-              else{
-                navigate('/signin')
-              }
-              
-            }
-              } className="rounded-md w-80 h-20 text-4xl text-center bg-hostBtn lg:w-96 sm:w-72 xsm:w-56">
+            <button
+              onClick={() => {
+                if (user) {
+                  navigate("/addlisting");
+                } else {
+                  navigate("/signin");
+                }
+              }}
+              className="rounded-md w-80 h-20 text-4xl text-center bg-hostBtn lg:w-96 sm:w-72 xsm:w-56"
+            >
               Host
             </button>
             <button className="rounded-md w-80 h-20 text-4xl text-center bg-hostedBtn lg:w-96 sm:w-72 xsm:w-56">
