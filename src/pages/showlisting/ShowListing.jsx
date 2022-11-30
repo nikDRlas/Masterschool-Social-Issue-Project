@@ -13,23 +13,26 @@ const ShowListing = () => {
   
   const getListing = async () => {
     setLoading(true);
-    const docRef = doc(db, "listings", user.uid);
-    const docSnap = await getDoc(docRef);
+    try{
+      const docRef = doc(db, "listings", user?.uid);
+      const docSnap = await getDoc(docRef);
 
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-      setListing(docSnap.data());
-      setLoading(false);
-    } else {
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        setListing(docSnap.data());
+        setLoading(false);
+        setError('');
+      }
+    }
+    catch(e){
       // doc.data() will be undefined in this case
-      setError('no such document for this user');
-      setLoading(false);
+       setLoading(true);
     }
   }
 
   useEffect(() => {
     getListing();
-  }, [])
+  }, [user])
 
   if (loading)
     return (
@@ -37,7 +40,7 @@ const ShowListing = () => {
         Loading<span className="text-darkGreen">...</span>
       </div>
     );
-    if (error) return <div className="text-center mt-60 text-4xl">{error}</div>;
+  if (error) return <div className="text-center mt-60 text-4xl">{error}</div>;
 
     return (
       <>
