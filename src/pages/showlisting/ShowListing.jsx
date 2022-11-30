@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
 import { useAuth } from "../../context/AuthContext";
+import house from '../../images/house.jpg';
+import shower from '../../images/icons/shower.svg';
+import babies from '../../images/icons/babies.svg';
+import pets from '../../images/icons/pets.svg';
+import tv from '../../images/icons/tv.svg';
+import wifi from '../../images/icons/wifi.svg';
+import ac from '../../images/icons/ac.svg';
 import { db, doc, getDoc } from '../../utils/firebase';
 
 const ShowListing = () => {
@@ -30,38 +37,83 @@ const ShowListing = () => {
     }
   }
 
-  useEffect(() => {
-    getListing();
-  }, [user])
+    useEffect(() => {
+      getListing();
+    }, [user])
 
-  if (loading)
-    return (
-      <div className="text-center mt-60 text-6xl">
-        Loading<span className="text-darkGreen">...</span>
-      </div>
-    );
-  if (error) return <div className="text-center mt-60 text-4xl">{error}</div>;
+    if (loading)
+      return (
+        <div className="text-center mt-60 text-6xl">
+          Loading<span className="text-darkGreen">...</span>
+        </div>
+      );
+    if (error) return <div className="text-center mt-60 text-4xl">{error}</div>;
 
     return (
-      <>
+      <div>
         {user ? <LogedNavbar /> : <Navbar />}
-        <p>name: {listing.name}</p>
-        <p>email: {listing.email}</p>
-        <p>city: {listing.city}</p>
-        <p>phone: {listing.phone}</p>
-        <p>arriveDate: {listing.arriveDate}</p>
-        <p>leavingDate: {listing.leavingDate}</p>
-        <p>numOfGuests: {listing.numOfGuests}</p>
-        <p>aboutYou: {listing.aboutYou}</p>
-        <p>babies: {listing.babies}</p>
-        <p>wifi: {listing.wifi}</p>
-        <p>ac: {listing.ac}</p>
-        <p>shower: {listing.shower}</p>
-        <p>tv: {listing.tv}</p>
-        <p>pets: {listing.pets}</p>
+        <h1 className="text-5xl md:text-6xl font-medium leading-10 text-center">
+              Stay with {listing.name}
+              <span className="text-darkGreen">!</span>
+            </h1>
+        <div className="lex-row flex justify-center mx-auto my-14 w-auto">
+          <div className="flex flex-col items-center w-1/2 md:w-1/3">
+            <img className='w-3/4 md:2/3 lg:w-7/12 h-auto' src={house} alt="a house" />
+            <h2 className="mt-3 font-semibold">{listing.name}</h2>
+            <h2 className="font-semibold">{listing.city}</h2>
+            <p className="text-sm text-lightGray">{listing.email}</p>
+            <p className="text-sm text-lightGray">{listing.phone}</p>
+          </div>
+          <div className="flex flex-col w-1/2 md:w-1/3">
+            <p className=" text-lightGray">"{listing.aboutYou}"</p>
+            <p className="my-3" >What {listing?.name?.split(' ')[0]} offers:</p>
+            <div className="mb-3 flex w-1/2 gap-2">
+              <img className='w-1/6 h-auto' src={wifi} alt="a house" />
+              <img className='w-1/6 h-auto' src={ac} alt="a house" />
+              <img className='w-1/6 h-auto' src={pets} alt="a house" />
+              <img className='w-1/6 h-auto' src={tv} alt="a house" />
+              <img className='w-1/6 h-auto' src={shower} alt="a house" />
+              <img className='w-1/6 h-auto' src={babies} alt="a house" />
+            </div>
+            <p>change to true/false and render the images conditionally</p>
+            <p>babies: {listing.babies} wifi: {listing.wifi}</p>
+            <p>ac: {listing.ac} shower: {listing.shower}</p>
+            <p className="mb-3">pets: {listing.pets} tv: {listing.tv}</p>
+            <h2>Available dates:</h2>
+
+            <div className="flex">
+              <div className="my-4 p-2 text-xs text-lightGray border-2 rounded-l-lg	lg:w-32 sm:w-18 md:w-24">
+                <p>FROM</p>
+                <p className="">{listing.arriveDate}</p>
+              </div>
+
+              <div className="my-4 p-2 text-xs text-lightGray border-2 rounded-r-lg lg:w-32 sm:w-18 md:w-24">
+                <p>UNTIL</p>
+                <p className="">{listing.leavingDate}</p>
+              </div>
+            </div>
+
+            <h2>Number of guests:</h2>
+            <div className="my-4 p-2 text-xs text-lightGray border-2 rounded-lg lg:w-64 sm:w-36 md:w-48">
+              <p>UP TO</p>
+              <p className="">{listing.numOfGuests} guests</p>
+            </div>
+            <button button className=" bg-darkGreen text-white py-4 px-3 rounded-lg lg:w-64 sm:w-36 md:w-48 ">
+              Contact now
+            </button>
+          </div>
+          <div className="circle-one"></div>
+        <div className="circle-two"></div>
+        <div className="circle-three"></div>
+        <div className="circle-four"></div>
+
+
+        </div>
+
       
 
-    </>)
+       </div>
+    )
 }
  
 export default ShowListing;

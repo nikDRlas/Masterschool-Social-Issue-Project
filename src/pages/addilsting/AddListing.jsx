@@ -7,8 +7,8 @@ import "../addilsting/addListing.css";
 import { db, doc, setDoc, serverTimestamp } from "../../utils/firebase";
 
 const AddListing = () => {
-  const [name, setName] = useState("");
-  const [city, setCity] = useState("");
+  const [name, setName] = useState("Snir Azran");
+  const [city, setCity] = useState("Haifa");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { user } = useAuth();
@@ -22,7 +22,7 @@ const AddListing = () => {
       arriveDate: "15/11/2022",
       leavingDate: "23/11/2022",
       numOfGuests: 1,
-      aboutYou: "i am snir",
+      aboutYou: "Hello I'm Niklas from Haifa and I'd love to host you in my two story appartment, I love dogs and cook great pasta",
       babies: "yes",
       wifi: "yes",
       ac: "no",
@@ -174,7 +174,7 @@ const AddListing = () => {
           </div>
         </div>
         <div className="submit-button-container">
-          <button className="continue-button">Continue</button>
+          <button onClick={handleAdd} className="continue-button">Continue</button>
         </div>
         <div className="circle-one"></div>
         <div className="circle-two"></div>
