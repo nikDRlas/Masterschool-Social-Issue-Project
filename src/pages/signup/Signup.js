@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import { useAuth } from "../../context/AuthContext";
-
+import { useHost } from "../../context/HostContext";
 function Signup() {
-  const [fullName, setFullName] = useState("");
+  const { fullName, setFullName, phone, setPhone } = useHost();
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -39,6 +38,7 @@ function Signup() {
   return (
     <>
       {user ? <LogedNavbar /> : <Navbar />}
+
       <div className="top-text text-center mt-12">
         <h1 className="font-medium text-7xl">
           Hello<span className="text-darkGreen">!</span>
@@ -69,10 +69,10 @@ function Signup() {
         />
         <input
           onChange={(e) => {
-            setPhoneNumber(e.target.value);
+            setPhone(e.target.value);
           }}
           className="m-4 border border-veryLightGray p-3 rounded-lg lg:w-96 sm:w-80 xsm:w-72"
-          type="tel"
+          type="phone"
           placeholder="Phone Number"
         />
         <input
