@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
 import { useAuth } from "../../context/AuthContext";
@@ -64,7 +63,9 @@ const ShowListing = () => {
             src={house}
             alt="a house"
           />
-          <h2 className="mt-3 text-sm italic text-lightGray">{listing?.timeStamp?.toDate().toLocaleString()}</h2>
+          <h2 className="mt-3 text-sm italic text-lightGray">
+            {listing?.timeStamp?.toDate().toLocaleString()}
+          </h2>
           <h2 className="font-semibold ">{listing.fullName}</h2>
           <h2 className="font-semibold">{listing.city}</h2>
           <p className="text-sm text-lightGray">{listing.email}</p>
@@ -76,12 +77,20 @@ const ShowListing = () => {
             What {listing?.fullName?.split(" ")[0]} offers:
           </p>
           <div className="flex w-1/2 gap-2 mb-3">
-            {listing.wifi && <img className="w-1/6 h-auto" src={wifi} alt="wifi" />}
+            {listing.wifi && (
+              <img className="w-1/6 h-auto" src={wifi} alt="wifi" />
+            )}
             {listing.ac && <img className="w-1/6 h-auto" src={ac} alt="ac" />}
-            {listing.pets && <img className="w-1/6 h-auto" src={pets} alt="pets" />}
+            {listing.pets && (
+              <img className="w-1/6 h-auto" src={pets} alt="pets" />
+            )}
             {listing.tv && <img className="w-1/6 h-auto" src={tv} alt="tv" />}
-            {listing.shower && <img className="w-1/6 h-auto" src={shower} alt="shower" />}
-            {listing.babies && <img className="w-1/6 h-auto" src={babies} alt="babies" />}
+            {listing.shower && (
+              <img className="w-1/6 h-auto" src={shower} alt="shower" />
+            )}
+            {listing.babies && (
+              <img className="w-1/6 h-auto" src={babies} alt="babies" />
+            )}
           </div>
           <h2 className="mt-3">Available dates:</h2>
 
@@ -102,10 +111,7 @@ const ShowListing = () => {
             <p>UP TO</p>
             <p className="">{listing.guestNum} guests</p>
           </div>
-          <button
-            
-            className="px-3 py-4 text-white rounded-lg bg-darkGreen lg:w-64 sm:w-36 md:w-48"
-          >
+          <button className="px-3 py-4 text-white rounded-lg bg-darkGreen lg:w-64 sm:w-36 md:w-48">
             Contact now
           </button>
         </div>
