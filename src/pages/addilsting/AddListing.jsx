@@ -12,7 +12,7 @@ import tvIcon from "../../icons/tv.svg";
 import wifiIcon from "../../icons/wifi.svg";
 import { db, doc, setDoc, serverTimestamp } from "../../utils/firebase";
 import { useHost } from "../../context/HostContext";
-const photoElement = document.getElementById("cityImage");
+const photoElement = document.getElementsByClassName("city-image");
 
 const AddListing = () => {
   const {
@@ -53,6 +53,15 @@ const AddListing = () => {
     if (e.target.tagName === "DIV") {
       e.target.classList.toggle("activated");
     }
+  };
+
+  const resetOffer = () => {
+    setBaby(false);
+    setWifi(false);
+    setAc(false);
+    setShower(false);
+    setTv(false);
+    setPets(false);
   };
 
   const handleAdd = async (e) => {
@@ -109,7 +118,10 @@ const AddListing = () => {
       </div>
       <div className="form-container pb-1 ">
         <form
-          onSubmit={handleAdd}
+          onSubmit={(e) => {
+            handleAdd(e);
+            resetOffer();
+          }}
           id="host-form"
           className="flex justify-between mt-12 w-9/12 mx-auto gap-x-8 md:gap-y-10 sm:gap-y-10 xsm:gap-y-10 xl:flex-row lg:flex-row md:flex-col md:items-center sm:flex-col sm:items-center xsm:flex-col xsm:items-center"
         >
@@ -125,36 +137,36 @@ const AddListing = () => {
               onChange={(e) => {
                 setCity(e.target.value);
                 if (e.target.value === "Tel-Aviv") {
-                  photoElement.classList.remove(
+                  photoElement[0].classList.remove(
                     "herziliya",
                     "jerusalem",
                     "haifa"
                   );
-                  photoElement.classList.add("tel-aviv");
+                  photoElement[0].classList.add("tel-aviv");
                 }
                 if (e.target.value === "Herzliya") {
-                  photoElement.classList.remove(
+                  photoElement[0].classList.remove(
                     "tel-aviv",
                     "jerusalem",
                     "haifa"
                   );
-                  photoElement.classList.add("herziliya");
+                  photoElement[0].classList.add("herziliya");
                 }
                 if (e.target.value === "Jerusalem") {
-                  photoElement.classList.remove(
+                  photoElement[0].classList.remove(
                     "tel-aviv",
                     "haifa",
                     "herziliya"
                   );
-                  photoElement.classList.add("jerusalem");
+                  photoElement[0].classList.add("jerusalem");
                 }
                 if (e.target.value === "Haifa") {
-                  photoElement.classList.remove(
+                  photoElement[0].classList.remove(
                     "tel-aviv",
                     "jerusalem",
                     "herziliya"
                   );
-                  photoElement.classList.add("haifa");
+                  photoElement[0].classList.add("haifa");
                 }
               }}
               className="text-lightGray w-full h-10 p-2 mx-auto border-solid border border-lightBorder border-t-0 rounded-b-md"
