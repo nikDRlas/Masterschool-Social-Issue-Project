@@ -11,9 +11,8 @@ const Navbar = () => {
   };
 
   return (
-    
     <nav className="realtive mx-auto p-6">
-      <div className="flex content-center items-center justify-between">
+      <div className="flex content-center items-center justify-between ">
         <div className="pt-2">
           <Link to={"/"}>
             <p className="text-3xl font-bold">
@@ -37,7 +36,7 @@ const Navbar = () => {
             <button className="mx-2 hover:text-darkBlue text-white p-1 px-2 rounded-md bg-oliveGreen">
               Sign up
             </button>
-          </Link>             
+          </Link>
         </div>
         <button className="md:hidden">
           {showMenu && <MdClose onClick={toggle} />}

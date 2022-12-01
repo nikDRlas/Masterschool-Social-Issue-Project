@@ -6,13 +6,18 @@ module.exports = {
       xsm: "320px",
       sm: "480px",
       md: "768px",
-      lg: "976px",
+      lg: "1024px",
       xl: "1440px",
     },
     extend: {
       backgroundImage: {
         "hero-pattern": "url('/src/images/background.png')",
+        "haifa-photo": "url('/src/images/haifa.jpg')",
+        "telaviv-photo": "url('/src/images/tel-aviv')",
+        "herzliya-photo": "url('/src/images/herzeliya.jpg')",
+        "jerusalem-photo": "url('/src/images/jerusalem.jpg')",
       },
+
       colors: {
         oliveGreen: "hsl(118, 36%, 42%)",
         brightRed: "hsl(12, 88%, 59%)",
@@ -29,6 +34,8 @@ module.exports = {
         veryLightGray: "#BFBFBF",
         hostBtn: "#a7c957",
         hostedBtn: "#f2e8cf",
+        lightBorder: "#BFBFBF",
+        mediumGray: "#757575",
       },
     },
   },
