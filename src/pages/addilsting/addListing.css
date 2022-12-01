@@ -73,7 +73,7 @@ img {
 }
 
 .image-baby {
-  background-image: url("../../../images/icons/babies.svg");
+  background-image: url("../../images/icons/babies.svg");
 }
 .button-wifi {
   grid-area: wifi;
@@ -81,7 +81,7 @@ img {
 }
 
 .image-wifi {
-  background-image: url("../../../images/icons/wifi.svg");
+  background-image: url("../../images/icons/wifi.svg");
 }
 .button-air {
   grid-area: air;
@@ -90,7 +90,7 @@ img {
 }
 
 .image-air {
-  background-image: url("../../../images/icons/ac.svg");
+  background-image: url("../../images/icons/ac.svg");
 }
 
 .image {
@@ -113,14 +113,14 @@ img {
 }
 
 .image-shower {
-  background-image: url("../../../images/icons/shower.svg");
+  background-image: url("../../images/icons/shower.svg");
 }
 .button-tv {
   grid-area: tv;
 }
 
 .image-tv {
-  background-image: url("../../../images/icons/tv.svg");
+  background-image: url("../../images/icons/tv.svg");
 }
 .button-pets {
   grid-area: pets;
@@ -128,11 +128,11 @@ img {
 }
 
 .image-pets {
-  background-image: url("../../../images/icons/pets.svg");
+  background-image: url("../../images/icons/pets.svg");
 }
 
 .location-map {
-  background-image: url("../../../images/haifa.jpg");
+  background-image: url("../../images/haifa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
