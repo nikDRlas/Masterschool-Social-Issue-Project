@@ -52,6 +52,7 @@ const ShowListing = () => {
   return (
     <div>
       {user ? <LogedNavbar /> : <Navbar />}
+      {console.log(listing)}
       <h1 className="text-5xl md:text-6xl font-medium leading-10 text-center">
         Stay with {listing.fullName}
         <span className="text-darkGreen">!</span>
@@ -74,24 +75,14 @@ const ShowListing = () => {
             What {listing?.fullName?.split(" ")[0]} offers:
           </p>
           <div className="mb-3 flex w-1/2 gap-2">
-            <img className="w-1/6 h-auto" src={wifi} alt="a house" />
-            <img className="w-1/6 h-auto" src={ac} alt="a house" />
-            <img className="w-1/6 h-auto" src={pets} alt="a house" />
-            <img className="w-1/6 h-auto" src={tv} alt="a house" />
-            <img className="w-1/6 h-auto" src={shower} alt="a house" />
-            <img className="w-1/6 h-auto" src={babies} alt="a house" />
+            {listing.wifi && <img className="w-1/6 h-auto" src={wifi} alt="wifi" />}
+            {listing.ac && <img className="w-1/6 h-auto" src={ac} alt="ac" />}
+            {listing.pets && <img className="w-1/6 h-auto" src={pets} alt="pets" />}
+            {listing.tv && <img className="w-1/6 h-auto" src={tv} alt="tv" />}
+            {listing.shower && <img className="w-1/6 h-auto" src={shower} alt="shower" />}
+            {listing.babies && <img className="w-1/6 h-auto" src={babies} alt="babies" />}
           </div>
-          <p>change to true/false and render the images conditionally</p>
-          <p>
-            babies: {listing.baby} wifi: {listing.wifi}
-          </p>
-          <p>
-            ac: {listing.ac} shower: {listing.shower}
-          </p>
-          <p className="mb-3">
-            pets: {listing.pets} tv: {listing.tv}
-          </p>
-          <h2>Available dates:</h2>
+          <h2 className="mt-3">Available dates:</h2>
 
           <div className="flex">
             <div className="my-4 p-2 text-xs text-lightGray border-2 rounded-l-lg	lg:w-32 sm:w-18 md:w-24">
@@ -111,7 +102,7 @@ const ShowListing = () => {
             <p className="">{listing.guestNum} guests</p>
           </div>
           <button
-            button
+            
             className=" bg-darkGreen text-white py-4 px-3 rounded-lg lg:w-64 sm:w-36 md:w-48 "
           >
             Contact now

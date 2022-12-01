@@ -27,14 +27,12 @@ const LogedNavbar = () => {
           <p className="hover:text-darkGrayishBlue mx-2">How does it work?</p>
           <p className="hover:text-darkGrayishBlue mx-2">About us</p>
           {/* <p >|</p> */}
-          <Link to='/showlisting'>
           <p
-            className="hover:text-darkGrayishBlue mx-2 pl-6 py-2"
+            className=" mx-2 pl-6 py-2"
             style={{ borderLeftWidth: "1px" }}
           >
-            Hello {user.email}
+            Hello {user.email}, see you listing <Link to='/showlisting'><span className="hover:text-darkGrayishBlue underline">here</span></Link>
           </p>
-          </Link>
           <button
             onClick={() => {
               logout();

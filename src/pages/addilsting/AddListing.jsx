@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
@@ -41,6 +41,7 @@ const AddListing = () => {
     pets,
     setPets,
   } = useHost();
+  // console.log(fullName, phone)
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { user } = useAuth();
@@ -71,7 +72,7 @@ const AddListing = () => {
       await setDoc(doc(db, "listings", user.uid), {
         fullName,
         email: user.email,
-        phone: phone,
+        phone,
         city,
         from,
         until,
@@ -109,7 +110,7 @@ const AddListing = () => {
       <div className="top-text text-center mt-14">
         <h1 className="font-medium text-5xl">
           Thank You For Choosing to Host
-          <span className="text-darkGreen"> !</span>
+          <span className="text-darkGreen">!</span>
         </h1>
         <p className="text-lightGray mt-10 w-72 mx-auto  ">
           Please fill in all the details below to help us match you with the
