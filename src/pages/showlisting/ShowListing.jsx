@@ -52,6 +52,7 @@ const ShowListing = () => {
   return (
     <div>
       {user ? <LogedNavbar /> : <Navbar />}
+      {console.log(listing)}
       <h1 className="text-5xl md:text-6xl font-medium leading-10 text-center">
         Stay with {listing.fullName}
         <span className="text-darkGreen">!</span>
@@ -111,7 +112,7 @@ const ShowListing = () => {
             <p className="">{listing.guestNum} guests</p>
           </div>
           <button
-            button
+            
             className=" bg-darkGreen text-white py-4 px-3 rounded-lg lg:w-64 sm:w-36 md:w-48 "
           >
             Contact now

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
@@ -13,11 +13,14 @@ function Signup() {
   const { register, user } = useAuth();
   const navigate = useNavigate();
 
+
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       await register({ email, password });
+      setPhone(phone);
+      setFullName(fullName)
       setLoading(false);
       navigate("/");
     } catch (err) {
@@ -52,14 +55,17 @@ function Signup() {
         className="flex flex-col items-center  mx-auto my-4 w-auto sm:w-96 "
       >
         <input
+          value={fullName}
           onChange={(e) => {
             setFullName(e.target.value);
+            console.log(fullName)
           }}
           className="m-4 border border-veryLightGray p-3 rounded-lg lg:w-96 sm:w-80 xsm:w-72 "
           type="text"
           placeholder="Full Name"
         />
         <input
+          
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -68,6 +74,7 @@ function Signup() {
           placeholder="Email"
         />
         <input
+          value={phone}
           onChange={(e) => {
             setPhone(e.target.value);
           }}
