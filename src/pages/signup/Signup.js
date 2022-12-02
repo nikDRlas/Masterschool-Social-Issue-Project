@@ -32,27 +32,27 @@ function Signup() {
 
   if (loading)
     return (
-      <div className="text-center mt-60 text-6xl">
+      <div className="text-6xl text-center mt-60">
         Loading<span className="text-darkGreen">...</span>
       </div>
     );
-  if (error) return <div className="text-center mt-60 text-4xl">{error}</div>;
+  if (error) return <div className="text-4xl text-center mt-60">{error}</div>;
 
   return (
     <>
       {user ? <LogedNavbar /> : <Navbar />}
 
-      <div className="top-text text-center mt-12">
+      <div className="mt-12 text-center top-text">
         <h1 className="font-medium text-7xl">
           Hello<span className="text-darkGreen">!</span>
         </h1>
-        <p className="text-lightGray mt-10 ">
+        <p className="mt-10 text-lightGray ">
           Create a free account with your email.
         </p>
       </div>
       <form
         onSubmit={onSubmit}
-        className="flex flex-col items-center  mx-auto my-4 w-auto sm:w-96 "
+        className="flex flex-col items-center w-auto mx-auto my-4 sm:w-96 "
       >
         <input
           value={fullName}
@@ -60,7 +60,7 @@ function Signup() {
             setFullName(e.target.value);
             console.log(fullName)
           }}
-          className="m-4 border border-veryLightGray p-3 rounded-lg lg:w-96 sm:w-80 xsm:w-72 "
+          className="p-3 m-4 border rounded-lg border-veryLightGray lg:w-96 sm:w-80 xsm:w-72 "
           type="text"
           placeholder="Full Name"
         />
@@ -69,7 +69,7 @@ function Signup() {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
-          className="m-4 border border-veryLightGray p-3 rounded-lg lg:w-96 sm:w-80 xsm:w-72"
+          className="p-3 m-4 border rounded-lg border-veryLightGray lg:w-96 sm:w-80 xsm:w-72"
           type="email"
           placeholder="Email"
         />
@@ -78,7 +78,7 @@ function Signup() {
           onChange={(e) => {
             setPhone(e.target.value);
           }}
-          className="m-4 border border-veryLightGray p-3 rounded-lg lg:w-96 sm:w-80 xsm:w-72"
+          className="p-3 m-4 border rounded-lg border-veryLightGray lg:w-96 sm:w-80 xsm:w-72"
           type="phone"
           placeholder="Phone Number"
         />
@@ -86,15 +86,15 @@ function Signup() {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
-          className="m-4 border border-veryLightGray p-3 rounded-lg lg:w-96 sm:w-80 xsm:w-72"
+          className="p-3 m-4 border rounded-lg border-veryLightGray lg:w-96 sm:w-80 xsm:w-72"
           type="password"
           placeholder="Password"
         />
-        <button className="m-4 bg-darkGreen text-white py-4 px-3 rounded-lg lg:w-96 sm:w-80 xsm:w-72 ">
+        <button className="px-3 py-4 m-4 text-white rounded-lg bg-darkGreen lg:w-96 sm:w-80 xsm:w-72 ">
           Create your free account
         </button>
       </form>
-      <div className="bottom-text text-center pb-12 ">
+      <div className="pb-12 text-center bottom-text ">
         <p className="text-lightGray ">
           Already has an account?{" "}
           <Link className="text-darkGreen" to="/signin">
@@ -102,6 +102,11 @@ function Signup() {
           </Link>
         </p>
       </div>
+      <div className="circle-one"></div>
+        <div className="circle-two"></div>
+        <div className="circle-three"></div>
+        <div className="circle-four"></div>
+
     </>
   );
 }
