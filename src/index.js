@@ -8,6 +8,7 @@ import Signup from "./pages/signup/Signup";
 import Signin from "./pages/signin/Signin";
 import AddListing from "./pages/addilsting/AddListing";
 import ShowListing from "./pages/showlisting/ShowListing";
+import ShowAllListing from "./pages/showAllListing/ShowAllListing";
 import { HostProvider } from "./context/HostContext";
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/showlisting",
     element: <ShowListing />,
+  },
+  {
+    path: "/showAllListing",
+    element: <ShowAllListing />,
   },
 ]);
 
