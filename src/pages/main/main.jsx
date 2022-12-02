@@ -49,7 +49,16 @@ const Main = () => {
             >
               Host
             </button>
-            <button className="h-20 text-4xl text-center rounded-md w-80 bg-hostedBtn lg:w-96 sm:w-72 xsm:w-56">
+            <button
+              onClick={() => {
+                if (user) {
+                  navigate("/showAllListing");
+                } else {
+                  navigate("/signin");
+                }
+              }}
+              className="h-20 text-4xl text-center rounded-md w-80 bg-hostedBtn lg:w-96 sm:w-72 xsm:w-56"
+            >
               Be Hosted
             </button>
           </div>
