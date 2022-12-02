@@ -23,3 +23,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.circle-one {
+  position: absolute;
+  width: 532px;
+  height: 532px;
+  left: -12px;
+  top: 842px;
+  border-radius: 50%;
+
+  background: rgba(106, 153, 78, 0.5);
+}
+
+.circle-two {
+  position: absolute;
+  border-radius: 50%;
+  width: 532px;
+  height: 532px;
+  left: -267px;
+  top: 758px;
+
+  background: #a7c957;
+}
+
+.circle-three {
+  border-radius: 50%;
+  position: absolute;
+  width: 532px;
+  height: 532px;
+  left: 922px;
+  top: 842px;
+
+  background: rgba(167, 201, 87, 0.5);
+}
+
+.circle-four {
+  border-radius: 50%;
+  position: absolute;
+  width: 532px;
+  height: 532px;
+  left: 1170px;
+  top: 758px;
+  background: #6a994e;
+}
