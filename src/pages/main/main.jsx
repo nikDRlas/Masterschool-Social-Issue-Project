@@ -10,15 +10,20 @@ import ronenPhoto from "../../images/ronen.png";
 const Main = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
-  
-  const scrollToSection = (section) =>{
-    document.querySelector(`.${section}`).scrollIntoView({ behavior: 'smooth'})
-  }
 
-  
+  const scrollToSection = (section) => {
+    document
+      .querySelector(`.${section}`)
+      .scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      {user ? <LogedNavbar scrollToSection={scrollToSection} /> : <Navbar scrollToSection={scrollToSection} />}
+      {user ? (
+        <LogedNavbar scrollToSection={scrollToSection} />
+      ) : (
+        <Navbar scrollToSection={scrollToSection} />
+      )}
       <div className="h-screen mb-20 main-container ">
         {/* Hero Section */}
 
@@ -44,7 +49,16 @@ const Main = () => {
             >
               Host
             </button>
-            <button className="h-20 text-4xl text-center rounded-md w-80 bg-hostedBtn lg:w-96 sm:w-72 xsm:w-56">
+            <button
+              onClick={() => {
+                if (user) {
+                  navigate("/showAllListing");
+                } else {
+                  navigate("/signin");
+                }
+              }}
+              className="h-20 text-4xl text-center rounded-md w-80 bg-hostedBtn lg:w-96 sm:w-72 xsm:w-56"
+            >
               Be Hosted
             </button>
           </div>
@@ -91,13 +105,10 @@ const Main = () => {
               </h3>
             </div>
           </div>
-          <div>
-            
-          </div>
+          <div></div>
           <h2 className="mt-32 mb-32 font-medium text-center xlg:w-3/5 lg:w-3/5 text-lightGray lg:text-4xl sm:text-3xl xsm:text-2xl sm:w-4/5 xsm:w-full">
             This is a group project developed for MasterSchool
           </h2>
-
         </div>
 
         <div className="circle circle-left-top"></div>

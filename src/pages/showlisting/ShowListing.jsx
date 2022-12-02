@@ -56,7 +56,7 @@ const ShowListing = () => {
         Stay with {listing.fullName}
         <span className="text-darkGreen">!</span>
       </h1>
-      <div className="flex justify-center w-auto mx-auto lex-row my-14">
+      <div className="flex justify-center w-auto mx-auto lex-row my-14 ">
         <div className="flex flex-col items-center w-1/2 md:w-1/3">
           <img
             className="w-3/4 h-auto md:2/3 lg:w-7/12"
