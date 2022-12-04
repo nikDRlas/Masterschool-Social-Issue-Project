@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
 import { useAuth } from "../../context/AuthContext";
@@ -14,6 +15,7 @@ import { db, getDocs, collection } from "../../utils/firebase";
 
 const ShowAllListing = () => {
   const [listings, setListings] = useState([]);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { user } = useAuth();
@@ -25,7 +27,7 @@ const ShowAllListing = () => {
       const docRef = collection(db, "listings");
       const docSnap = await getDocs(docRef);
       docSnap.forEach((doc) => {
-        list.push(doc.data());
+        list.push({ id: doc.id, ...doc.data() });
       });
 
       console.log("Document data:", list);
@@ -66,8 +68,13 @@ const ShowAllListing = () => {
           /*{ Image and name }*/
 
           <div
-            key={list.email}
-            className="px-6 py-4 rounded-md listing bg-darkGreen "
+            key={list.id}
+            className="px-6 py-4 rounded-md cursor-pointer xsm:px-3 listing bg-darkGreen "
+            onClick={() => {
+              navigate("/showListingDyn", {
+                state: { id: list.id },
+              });
+            }}
           >
             <img
               className="h-auto mx-auto mt-4 w-36"
@@ -96,7 +103,7 @@ const ShowAllListing = () => {
               </div>
               <div className="ml-6 guestNum">
                 <h2 className="text-white ">UP TO</h2>
-                <h2 className="text-white ">{list.guestNum} Guest</h2>
+                <h2 className="text-white ">{list.guestNum} Guests</h2>
               </div>
             </div>
 

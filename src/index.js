@@ -9,6 +9,7 @@ import Signin from "./pages/signin/Signin";
 import AddListing from "./pages/addilsting/AddListing";
 import ShowListing from "./pages/showlisting/ShowListing";
 import ShowAllListing from "./pages/showAllListing/ShowAllListing";
+import ShowListingDyn from "./pages/showlisting/ShowListingDyn";
 import { HostProvider } from "./context/HostContext";
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/showAllListing",
     element: <ShowAllListing />,
+  },
+  {
+    path: "/showListingDyn",
+    element: <ShowListingDyn />,
   },
 ]);
 
