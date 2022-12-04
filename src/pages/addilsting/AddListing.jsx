@@ -97,42 +97,42 @@ const AddListing = () => {
 
   if (loading)
     return (
-      <div className="text-center mt-60 text-6xl">
+      <div className="text-6xl text-center mt-60">
         Loading<span className="text-darkGreen">...</span>
       </div>
     );
-  if (error) return <div className="text-center mt-60 text-4xl">{error}</div>;
+  if (error) return <div className="text-4xl text-center mt-60">{error}</div>;
 
   return (
     <>
       {user ? <LogedNavbar /> : <Navbar />}
       {/* Top section text */}
-      <div className="top-text text-center mt-14">
-        <h1 className="font-medium text-5xl">
+      <div className="text-center top-text mt-14">
+        <h1 className="text-5xl font-medium xsm:text-4xl">
           Thank You For Choosing to Host
           <span className="text-darkGreen">!</span>
         </h1>
-        <p className="text-lightGray mt-10 w-72 mx-auto  ">
+        <p className="mx-auto mt-10 text-lightGray w-72 ">
           Please fill in all the details below to help us match you with the
           perfect guests.
         </p>
       </div>
-      <div className="form-container pb-1 ">
+      <div className="pb-1 form-container ">
         <form
           onSubmit={(e) => {
             handleAdd(e);
             resetOffer();
           }}
           id="host-form"
-          className="flex justify-between mt-12 w-9/12 mx-auto gap-x-8 md:gap-y-10 sm:gap-y-10 xsm:gap-y-10 xl:flex-row lg:flex-row md:flex-col md:items-center sm:flex-col sm:items-center xsm:flex-col xsm:items-center"
+          className="flex justify-between w-9/12 mx-auto mt-12 gap-x-8 md:gap-y-10 sm:gap-y-10 xsm:gap-y-10 xl:flex-row lg:flex-row md:flex-col md:items-center sm:flex-col sm:items-center xsm:flex-col xsm:items-center"
         >
           {/* location box */}
 
-          <div className="location-card w-4/12 flex flex-col md:w-full sm:w-full xsm:w-full ">
-            <h3 className="text-1xl text-center">My location is...</h3>
+          <div className="flex flex-col w-4/12 location-card md:w-full sm:w-full xsm:w-full ">
+            <h3 className="text-center text-1xl">My location is...</h3>
             <div
               id="cityImage"
-              className="city-image haifa bg-cover bg-no-repeat bg-center w-full h-40 mx-auto mt-4 rounded-t-md border-solid border border-lightBorder"
+              className="w-full h-40 mx-auto mt-4 bg-center bg-no-repeat bg-cover border border-solid city-image haifa rounded-t-md border-lightBorder"
             ></div>
             <select
               onChange={(e) => {
@@ -170,7 +170,7 @@ const AddListing = () => {
                   photoElement[0].classList.add("haifa");
                 }
               }}
-              className="text-lightGray w-full h-10 p-2 mx-auto border-solid border border-lightBorder border-t-0 rounded-b-md"
+              className="w-full h-10 p-2 mx-auto border border-t-0 border-solid text-lightGray border-lightBorder rounded-b-md"
               required
             >
               <option value="Haifa">Haifa</option>
@@ -182,13 +182,13 @@ const AddListing = () => {
 
           {/* Hosting dates box */}
 
-          <div className="details-card w-4/12 flex flex-col md:w-full sm:w-full xsm:w-full">
-            <h3 className="text-1xl text-center xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
+          <div className="flex flex-col w-4/12 details-card md:w-full sm:w-full xsm:w-full">
+            <h3 className="text-center text-1xl xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
               I can host...
             </h3>
-            <div className="dates mt-4 flex justify-center">
-              <div className="input-container w-2/4 h-14 py-1 px-2 border-solid border border-lightBorder rounded-tl-md">
-                <label className="label text-mediumGray font-medium text-xs ">
+            <div className="flex justify-center mt-4 dates">
+              <div className="w-2/4 px-2 py-1 border border-solid input-container h-14 border-lightBorder rounded-tl-md">
+                <label className="text-xs font-medium label text-mediumGray ">
                   FROM
                 </label>
                 <input
@@ -196,13 +196,13 @@ const AddListing = () => {
                   onChange={(e) => {
                     setFrom(e.target.value);
                   }}
-                  className="text-mediumGray w-full"
+                  className="w-full text-mediumGray"
                   type="date"
                 />
               </div>
 
-              <div className="input-container w-2/4 h-14 py-1 px-2 border-solid border border-lightBorder rounded-tr-md">
-                <label className="label text-mediumGray font-medium text-xs">
+              <div className="w-2/4 px-2 py-1 border border-solid input-container h-14 border-lightBorder rounded-tr-md">
+                <label className="text-xs font-medium label text-mediumGray">
                   UNTIL
                 </label>
                 <input
@@ -210,7 +210,7 @@ const AddListing = () => {
                   onChange={(e) => {
                     setUntil(e.target.value);
                   }}
-                  className="text-mediumGray w-full"
+                  className="w-full text-mediumGray"
                   type="date"
                 />
               </div>
@@ -218,8 +218,8 @@ const AddListing = () => {
 
             {/* Guest number box */}
 
-            <div className="guest-num w-full h-14 p-2 border-solid border border-lightBorder border-t-0 rounded-b-md md:w-full sm:w-full xsm:w-full">
-              <label className="label block text-mediumGray font-medium text-xs">
+            <div className="w-full p-2 border border-t-0 border-solid guest-num h-14 border-lightBorder rounded-b-md md:w-full sm:w-full xsm:w-full">
+              <label className="block text-xs font-medium label text-mediumGray">
                 NUMBER OF GUESTS
               </label>
               <input
@@ -236,7 +236,7 @@ const AddListing = () => {
             {/* About you box */}
 
             <div className="about">
-              <h3 className="text-1xl xlg:mb-0 lg:mb-0 xlg:mt-3 lg:mt-3 md:mt-14 sm:mt-14 xsm:mt-14 md:mb-1 sm:mb-1 xsm:mb-1 text-center">
+              <h3 className="text-center text-1xl xlg:mb-0 lg:mb-0 xlg:mt-3 lg:mt-3 md:mt-14 sm:mt-14 xsm:mt-14 md:mb-1 sm:mb-1 xsm:mb-1">
                 A little bit about youself...
               </h3>
               <input
@@ -244,7 +244,7 @@ const AddListing = () => {
                 onChange={(e) => {
                   setAboutU(e.target.value);
                 }}
-                className="w-full mt-2 text-lightGray h-12 p-2 border-solid border border-lightBorder rounded-md"
+                className="w-full h-12 p-2 mt-2 border border-solid rounded-md text-lightGray border-lightBorder"
                 type="text"
                 placeholder="I am..."
               />
@@ -253,11 +253,11 @@ const AddListing = () => {
 
           {/* Offer details box */}
 
-          <div className="offer-card w-4/12 md:w-full sm:w-full xsm:w-full">
-            <h3 className="text-1xl text-center xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
+          <div className="w-4/12 offer-card md:w-full sm:w-full xsm:w-full">
+            <h3 className="text-center text-1xl xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
               I can offer...
             </h3>
-            <div className="offer grid grid-cols-3 mt-4  ">
+            <div className="grid grid-cols-3 mt-4 offer ">
               <div
                 onClick={(e) => {
                   if (!baby) {
@@ -272,7 +272,7 @@ const AddListing = () => {
                 className="offer-item cursor-pointer py-1.5 px-2 border-solid border border-lightBorder rounded-tl-md"
               >
                 <img src={babiesIcon} alt="" className="w-6 h-6 mx-auto" />
-                <h3 className="text-center mt-4 text-mediumGray w-full">
+                <h3 className="w-full mt-4 text-center text-mediumGray">
                   Babies allowed
                 </h3>
               </div>
@@ -290,7 +290,7 @@ const AddListing = () => {
                 className="offer-item cursor-pointer py-1.5 px-2 border-solid border border-l-0 border-lightBorder"
               >
                 <img src={wifiIcon} alt="" className="w-6 h-6 mx-auto" />
-                <h3 className="text-center mt-4 text-mediumGray w-full">
+                <h3 className="w-full mt-4 text-center text-mediumGray">
                   Wifi
                 </h3>
               </div>
@@ -308,7 +308,7 @@ const AddListing = () => {
                 className="offer-item cursor-pointer py-1.5 px-2 border-solid border border-l-0  border-lightBorder rounded-tr-md"
               >
                 <img src={acIcon} alt="" className="w-6 h-6 mx-auto" />
-                <h3 className="text-center mt-4 text-mediumGray w-full">AC</h3>
+                <h3 className="w-full mt-4 text-center text-mediumGray">AC</h3>
               </div>
               <div
                 onClick={(e) => {
@@ -324,7 +324,7 @@ const AddListing = () => {
                 className="offer-item cursor-pointer py-1.5 px-2 border-solid border border-t-0  border-lightBorder rounded-bl-md"
               >
                 <img src={showerIcon} alt="" className="w-6 h-6 mx-auto" />
-                <h3 className="text-center mt-4 text-mediumGray w-full">
+                <h3 className="w-full mt-4 text-center text-mediumGray">
                   Shower
                 </h3>
               </div>
@@ -342,7 +342,7 @@ const AddListing = () => {
                 className="offer-item cursor-pointer py-1.5 px-2 border-solid border border-t-0 border-l-0  border-lightBorder "
               >
                 <img src={tvIcon} alt="" className="w-6 h-6 mx-auto" />
-                <h3 className="text-center mt-4 text-mediumGray w-full">TV</h3>
+                <h3 className="w-full mt-4 text-center text-mediumGray">TV</h3>
               </div>
               <div
                 onClick={(e) => {
@@ -358,7 +358,7 @@ const AddListing = () => {
                 className="offer-item cursor-pointer py-1.5 px-2 border-solid border border-t-0 border-l-0 border-lightBorder rounded-br-md"
               >
                 <img src={petsIcon} alt="" className="w-6 h-6 mx-auto" />
-                <h3 className="text-center mt-4 text-mediumGray w-full">
+                <h3 className="w-full mt-4 text-center text-mediumGray">
                   Pets allowed
                 </h3>
               </div>
@@ -368,7 +368,7 @@ const AddListing = () => {
         <button
           form="host-form"
           type="submit"
-          className="block my-12 mx-auto bg-darkGreen justify-center text-white py-4 px-3 rounded-lg lg:w-3/12 sm:w-80 xsm:w-72 "
+          className="justify-center block px-3 py-4 mx-auto my-12 text-white rounded-lg bg-darkGreen lg:w-3/12 sm:w-80 xsm:w-72 "
         >
           Continue
         </button>

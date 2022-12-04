@@ -13,14 +13,13 @@ function Signup() {
   const { register, user } = useAuth();
   const navigate = useNavigate();
 
-
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       await register({ email, password });
       setPhone(phone);
-      setFullName(fullName)
+      setFullName(fullName);
       setLoading(false);
       navigate("/");
     } catch (err) {
@@ -58,14 +57,13 @@ function Signup() {
           value={fullName}
           onChange={(e) => {
             setFullName(e.target.value);
-            console.log(fullName)
+            console.log(fullName);
           }}
           className="p-3 m-4 border rounded-lg border-veryLightGray lg:w-96 sm:w-80 xsm:w-72 "
           type="text"
           placeholder="Full Name"
         />
         <input
-          
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -102,11 +100,10 @@ function Signup() {
           </Link>
         </p>
       </div>
-      <div className="circle-one"></div>
+      {/* <div className="circle-one"></div>
         <div className="circle-two"></div>
         <div className="circle-three"></div>
-        <div className="circle-four"></div>
-
+        <div className="circle-four"></div> */}
     </>
   );
 }

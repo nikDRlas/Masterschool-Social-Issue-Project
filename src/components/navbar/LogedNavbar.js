@@ -48,7 +48,7 @@ const LogedNavbar = ({ scrollToSection }) => {
               logout();
               navigate("/");
             }}
-            className="p-1 px-2 mx-2 text-white rounded-md hover:text-darkBlue bg-oliveGreen"
+            className="p-1 px-2 mx-2 text-white rounded-md hover:text-darkBlue bg-darkGreen"
           >
             Log Out
           </button>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
+import { useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import house from "../../images/house.jpg";
 import ac from "../../images/icons/ac.svg";
@@ -11,16 +12,18 @@ import tv from "../../images/icons/tv.svg";
 import wifi from "../../images/icons/wifi.svg";
 import { db, doc, getDoc } from "../../utils/firebase";
 
-const ShowListing = () => {
+const ShowListingDyn = () => {
   const [listing, setListing] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const location = useLocation();
   const { user } = useAuth();
 
   const getListing = async () => {
+    console.log(location);
     setLoading(true);
     try {
-      const docRef = doc(db, "listings", user?.uid);
+      const docRef = doc(db, "listings", location.state.id);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
@@ -55,7 +58,7 @@ const ShowListing = () => {
         Stay with {listing.fullName}
         <span className="text-darkGreen">!</span>
       </h1>
-      <div className="flex justify-center w-auto mx-auto my-20 lex-row ">
+      <div className="flex justify-center w-auto mx-auto my-20">
         <div className="flex flex-col items-center w-1/2 md:w-1/3">
           <img
             className="w-3/4 h-auto md:2/3 lg:w-7/12"
@@ -120,4 +123,4 @@ const ShowListing = () => {
   );
 };
 
-export default ShowListing;
+export default ShowListingDyn;

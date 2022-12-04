@@ -30,7 +30,7 @@ const Main = () => {
         <div className="bg-center bg-no-repeat bg-cover image-container bg-hero-pattern h-max">
           <div className="w-2/3 m-auto text-center text-container pt-28 lg:w-3/5 sm:w-4/5 xsm:w-4/5">
             <h1 className="font-bold text-white main-text lg:text-6xl sm:text-4xl xsm:text-3xl ">
-              find or give a place of comfort in tough times.
+              Find or give a place of comfort in tough times.
             </h1>
             <h2 className="mt-32 text-white sec-text lg:text-5xl sm:text-3xl xsm:text-2xl ">
               I would like to
@@ -45,7 +45,7 @@ const Main = () => {
                   navigate("/signin");
                 }
               }}
-              className="h-20 text-4xl text-center rounded-md w-80 bg-hostBtn lg:w-96 sm:w-72 xsm:w-56"
+              className="h-20 text-4xl text-center rounded-md w-80 bg-darkGreen lg:w-96 sm:w-72 xsm:w-56"
             >
               Host
             </button>
@@ -59,7 +59,7 @@ const Main = () => {
               }}
               className="h-20 text-4xl text-center rounded-md w-80 bg-hostedBtn lg:w-96 sm:w-72 xsm:w-56"
             >
-              Be Hosted
+              Get Hosted
             </button>
           </div>
         </div>
