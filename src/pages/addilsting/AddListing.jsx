@@ -40,6 +40,8 @@ const AddListing = () => {
     setTv,
     pets,
     setPets,
+    created,
+    setCreated
   } = useHost();
   // console.log(fullName, phone)
   const [loading, setLoading] = useState(false);
@@ -87,6 +89,7 @@ const AddListing = () => {
         timeStamp: serverTimestamp(),
       });
       setLoading(false);
+      setCreated(true);
       navigate("/showlisting");
     } catch (err) {
       setLoading(false);

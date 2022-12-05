@@ -3,6 +3,7 @@ import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { useHost } from "../../context/HostContext";
 
 const LogedNavbar = ({ scrollToSection }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -11,6 +12,7 @@ const LogedNavbar = ({ scrollToSection }) => {
     setShowMenu(!showMenu);
   };
   const navigate = useNavigate();
+  const { created, setCreated } = useHost();
 
   return (
     <nav className="p-6 mx-auto realtive">
@@ -39,14 +41,23 @@ const LogedNavbar = ({ scrollToSection }) => {
             About us
           </p>
           {/* <p >|</p> */}
-          <p className="py-2 pl-6 mx-2 " style={{ borderLeftWidth: "1px" }}>
+          { created ? <p className="py-2 pl-6 mx-2 " style={{ borderLeftWidth: "1px" }}>
             Hello {user.email}, see your listing{" "}
             <Link to="/showlisting">
               <span className="underline hover:text-darkGrayishBlue">here</span>
             </Link>
-          </p>
+          </p> :<p className="py-2 pl-6 mx-2 " style={{ borderLeftWidth: "1px" }}>
+            Hello {user.email}
+          </p>}
+          {/* <p className="py-2 pl-6 mx-2 " style={{ borderLeftWidth: "1px" }}>
+            Hello {user.email}, see your listing{" "}
+            <Link to="/showlisting">
+              <span className="underline hover:text-darkGrayishBlue">here</span>
+            </Link>
+          </p> */}
           <button
             onClick={() => {
+              setCreated(false);
               logout();
               navigate("/");
             }}
