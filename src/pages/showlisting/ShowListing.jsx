@@ -85,7 +85,7 @@ const ShowListing = () => {
             {listing.shower && (
               <img className="h-auto w-1/8" src={shower} alt="shower" />
             )}
-            {listing.babies && (
+            {listing.baby && (
               <img className="h-auto w-1/8" src={babies} alt="babies" />
             )}
           </div>
