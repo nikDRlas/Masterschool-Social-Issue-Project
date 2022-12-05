@@ -19,7 +19,7 @@ module.exports = {
       },
 
       colors: {
-        oliveGreen: "hsl(118, 36%, 42%)",
+        oliveGreen: "#a7c957",
         brightRed: "hsl(12, 88%, 59%)",
         brightRedLight: "hsl(12, 88%, 69%)",
         brightRedSupLight: "hsl(12, 88%, 95%)",

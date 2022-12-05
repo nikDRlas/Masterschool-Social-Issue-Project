@@ -19,7 +19,9 @@ const LogedNavbar = ({ scrollToSection }) => {
           <Link to={"/"}>
             <p className="text-3xl font-bold">
               Wegot
-              <span className="text-3xl font-bold text-oliveGreen">U</span>
+              <span className="text-3xl font-bold duration-200 ease-in text-darkGreen hover:text-oliveGreen">
+                U
+              </span>
             </p>
           </Link>
         </div>
@@ -48,7 +50,7 @@ const LogedNavbar = ({ scrollToSection }) => {
               logout();
               navigate("/");
             }}
-            className="p-1 px-2 mx-2 text-white rounded-md hover:text-darkBlue bg-darkGreen"
+            className="p-1 px-2 mx-2 text-white duration-200 ease-in rounded-md hover:text-darkBlue bg-darkGreen hover:bg-oliveGreen"
           >
             Log Out
           </button>

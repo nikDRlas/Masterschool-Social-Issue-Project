@@ -88,14 +88,14 @@ function Signup() {
           type="password"
           placeholder="Password"
         />
-        <button className="px-3 py-4 m-4 text-white rounded-lg bg-darkGreen lg:w-96 sm:w-80 xsm:w-72 ">
+        <button className="px-3 py-4 m-4 text-white duration-200 ease-in rounded-lg hover:bg-oliveGreen bg-darkGreen lg:w-96 sm:w-80 xsm:w-72 ">
           Create your free account
         </button>
       </form>
       <div className="pb-12 text-center bottom-text ">
         <p className="text-lightGray ">
           Already has an account?{" "}
-          <Link className="text-darkGreen" to="/signin">
+          <Link className="text-darkGreen hover:text-oliveGreen" to="/signin">
             login
           </Link>
         </p>

@@ -10,11 +10,14 @@ import shower from "../../images/icons/shower.svg";
 import tv from "../../images/icons/tv.svg";
 import wifi from "../../images/icons/wifi.svg";
 import { db, doc, getDoc } from "../../utils/firebase";
+import ShowDetails from "../../components/ShowDetails";
+import { useHost } from "../../context/HostContext";
 
 const ShowListing = () => {
   const [listing, setListing] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { showDetails, setShowDetails } = useHost();
   const { user } = useAuth();
 
   const getListing = async () => {
@@ -62,33 +65,31 @@ const ShowListing = () => {
             src={house}
             alt="a house"
           />
-          <h2 className="mt-2 font-semibold ">{listing.fullName}</h2>
-          <h2 className="mt-1 font-semibold">{listing.city}</h2>
-          <p className="mt-1 text-sm text-lightGray">{listing.email}</p>
-          <p className="mt-1 text-sm text-lightGray">{listing.phone}</p>
+          <h2 className="mt-2 text-2xl font-semibold ">{listing.fullName}</h2>
+          <h2 className="mt-1 text-lg font-semibold">From {listing.city}</h2>
         </div>
         <div className="flex flex-col w-1/2 md:w-1/3">
-          <p className=" text-lightGray">"{listing.aboutU}"</p>
-          <p className="my-5">
+          <p className="text-lg text-lightGray">"{listing.aboutU}"</p>
+          <p className="my-5 text-xl">
             What {listing?.fullName?.split(" ")[0]} offers:
           </p>
           <div className="flex w-1/2 gap-2 mb-3">
             {listing.wifi && (
-              <img className="w-1/6 h-auto" src={wifi} alt="wifi" />
+              <img className="h-auto w-1/8" src={wifi} alt="wifi" />
             )}
-            {listing.ac && <img className="w-1/6 h-auto" src={ac} alt="ac" />}
+            {listing.ac && <img className="h-auto w-1/8" src={ac} alt="ac" />}
             {listing.pets && (
-              <img className="w-1/6 h-auto" src={pets} alt="pets" />
+              <img className="h-auto w-1/8" src={pets} alt="pets" />
             )}
-            {listing.tv && <img className="w-1/6 h-auto" src={tv} alt="tv" />}
+            {listing.tv && <img className="h-auto w-1/8" src={tv} alt="tv" />}
             {listing.shower && (
-              <img className="w-1/6 h-auto" src={shower} alt="shower" />
+              <img className="h-auto w-1/8" src={shower} alt="shower" />
             )}
             {listing.babies && (
-              <img className="w-1/6 h-auto" src={babies} alt="babies" />
+              <img className="h-auto w-1/8" src={babies} alt="babies" />
             )}
           </div>
-          <h2 className="mt-3">Available dates:</h2>
+          <h2 className="mt-3 text-xl">Available dates:</h2>
 
           <div className="flex">
             <div className="p-2 my-4 text-xs border-2 rounded-l-lg text-lightGray lg:w-32 sm:w-18 md:w-24">
@@ -102,12 +103,18 @@ const ShowListing = () => {
             </div>
           </div>
 
-          <h2>Number of guests:</h2>
+          <h2 className="text-xl">Number of guests:</h2>
           <div className="p-2 my-4 text-xs border-2 rounded-lg text-lightGray lg:w-64 sm:w-36 md:w-48">
             <p>UP TO</p>
             <p className="">{listing.guestNum} guests</p>
           </div>
-          <button className="px-3 py-4 mt-2 text-white rounded-lg bg-darkGreen lg:w-64 sm:w-36 md:w-48">
+          <button
+            onClick={() => {
+              setShowDetails(true);
+              console.log(showDetails);
+            }}
+            className="px-3 py-4 mt-2 text-white ease-in rounded-lg hover:bg-oliveGreen bg-darkGreen lg:w-64 sm:w-36 md:w-48"
+          >
             Contact now
           </button>
         </div>
@@ -116,6 +123,13 @@ const ShowListing = () => {
         <div className="circle-three"></div>
         <div className="circle-four"></div> */}
       </div>
+      {showDetails && (
+        <ShowDetails
+          phone={listing.phone}
+          name={listing.fullName}
+          email={listing.email}
+        />
+      )}
     </div>
   );
 };
