@@ -67,14 +67,17 @@ function Signin() {
               type="password"
               placeholder="Password"
             />
-            <button className="px-3 py-4 m-4 text-white rounded-lg bg-darkGreen lg:w-96 sm:w-80 xsm:w-72 ">
+            <button className="px-3 py-4 m-4 text-white duration-200 ease-in rounded-lg hover:bg-oliveGreen bg-darkGreen lg:w-96 sm:w-80 xsm:w-72">
               Login
             </button>
           </form>
           <div className="pb-12 text-center bottom-text ">
             <p className="text-lightGray ">
               {"Don’t have an account?"}{" "}
-              <Link className="text-darkGreen" to="/signup">
+              <Link
+                className="duration-200 ease-in text-darkGreen hover:text-oliveGreen "
+                to="/signup"
+              >
                 Sign up
               </Link>
             </p>

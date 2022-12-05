@@ -45,7 +45,7 @@ const Main = () => {
                   navigate("/signin");
                 }
               }}
-              className="h-20 text-4xl text-center rounded-md w-80 bg-darkGreen lg:w-96 sm:w-72 xsm:w-56"
+              className="h-20 text-4xl font-medium text-center duration-200 ease-in rounded-lg hover:text-white hover:bg-oliveGreen w-80 bg-darkGreen lg:w-96 sm:w-72 xsm:w-56"
             >
               Host
             </button>
@@ -57,7 +57,7 @@ const Main = () => {
                   navigate("/signin");
                 }
               }}
-              className="h-20 text-4xl text-center rounded-md w-80 bg-hostedBtn lg:w-96 sm:w-72 xsm:w-56"
+              className="h-20 text-4xl font-medium text-center duration-200 ease-in rounded-lg hover:bg-darkGreen w-80 hover:text-white bg-oliveGreen lg:w-96 sm:w-72 xsm:w-56"
             >
               Get Hosted
             </button>
@@ -70,11 +70,11 @@ const Main = () => {
             How Does It Work?
           </h1>
           <img
-            className="w-2/4 mt-24 xlg: lg:w-2/4 sm:w-4/5 xsm:w-full"
+            className="w-2/4 mt-24 lg:w-2/4 sm:w-4/5 xsm:w-full"
             src={howitwork}
             alt=""
           />
-          <h2 className="w-3/5 mt-6 font-medium text-center xlg: lg:w-3/5 sm:w-4/5 xsm:w-full text-lightGray lg:text-4xl sm:text-3xl xsm:text-2xl">
+          <h2 className="w-3/5 mt-6 font-medium text-center lg:w-3/5 sm:w-4/5 xsm:w-full text-lightGray lg:text-4xl sm:text-3xl xsm:text-2xl">
             We help people at risk find shelter by connecting them with the
             perfects hosts
           </h2>
@@ -86,19 +86,19 @@ const Main = () => {
             About Us
           </h1>
           <div className="flex items-center justify-center mt-24 circle-images gap-x-20 gap-y-20 lg:flex-row sm:flex-col xsm:flex-col ">
-            <div className="circle-image lg:w-1/5 sm:w-3/4 xsm:w-3/4">
+            <div className="duration-300 ease-in circle-image hover:-translate-y-5 lg:w-1/5 sm:w-3/4 xsm:w-3/4">
               <img src={snirPhoto} alt="" />
               <h3 className="mt-6 text-2xl font-medium text-center">
                 Snir Azran
               </h3>
             </div>
-            <div className="circle-image lg:w-1/5 sm:w-3/4 xsm:w-3/4">
+            <div className="duration-300 ease-in hover:-translate-y-5 circle-image lg:w-1/5 sm:w-3/4 xsm:w-3/4">
               <img src={niklasPhoto} alt="" />
               <h3 className="mt-6 text-2xl font-medium text-center">
                 Niklas Lindenbaum
               </h3>
             </div>
-            <div className="circle-image lg:w-1/5 sm:w-3/4 xsm:w-3/4">
+            <div className="duration-300 ease-in hover:-translate-y-5 circle-image lg:w-1/5 sm:w-3/4 xsm:w-3/4">
               <img src={ronenPhoto} alt="" />
               <h3 className="mt-6 text-2xl font-medium text-center">
                 Ronnen Podolsky

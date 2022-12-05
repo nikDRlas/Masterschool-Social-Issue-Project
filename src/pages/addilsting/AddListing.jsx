@@ -129,7 +129,7 @@ const AddListing = () => {
           {/* location box */}
 
           <div className="flex flex-col w-4/12 location-card md:w-full sm:w-full xsm:w-full ">
-            <h3 className="text-center text-1xl">My location is...</h3>
+            <h3 className="text-xl text-center">My location is...</h3>
             <div
               id="cityImage"
               className="w-full h-40 mx-auto mt-4 bg-center bg-no-repeat bg-cover border border-solid city-image haifa rounded-t-md border-lightBorder"
@@ -183,7 +183,7 @@ const AddListing = () => {
           {/* Hosting dates box */}
 
           <div className="flex flex-col w-4/12 details-card md:w-full sm:w-full xsm:w-full">
-            <h3 className="text-center text-1xl xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
+            <h3 className="text-xl text-center xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
               I can host...
             </h3>
             <div className="flex justify-center mt-4 dates">
@@ -236,7 +236,7 @@ const AddListing = () => {
             {/* About you box */}
 
             <div className="about">
-              <h3 className="text-center text-1xl xlg:mb-0 lg:mb-0 xlg:mt-3 lg:mt-3 md:mt-14 sm:mt-14 xsm:mt-14 md:mb-1 sm:mb-1 xsm:mb-1">
+              <h3 className="text-xl text-center xlg:mb-0 lg:mb-0 xlg:mt-3 lg:mt-3 md:mt-14 sm:mt-14 xsm:mt-14 md:mb-1 sm:mb-1 xsm:mb-1">
                 A little bit about youself...
               </h3>
               <input
@@ -254,7 +254,7 @@ const AddListing = () => {
           {/* Offer details box */}
 
           <div className="w-4/12 offer-card md:w-full sm:w-full xsm:w-full">
-            <h3 className="text-center text-1xl xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
+            <h3 className="text-xl text-center xl:mt-0 lg:mt-0 md:mt-3 sm:mt-3 xsm:mt-3">
               I can offer...
             </h3>
             <div className="grid grid-cols-3 mt-4 offer ">
@@ -368,7 +368,7 @@ const AddListing = () => {
         <button
           form="host-form"
           type="submit"
-          className="justify-center block px-3 py-4 mx-auto my-12 text-white rounded-lg bg-darkGreen lg:w-3/12 sm:w-80 xsm:w-72 "
+          className="justify-center block px-3 py-4 mx-auto my-12 text-white duration-200 ease-in rounded-lg hover:bg-oliveGreen bg-darkGreen lg:w-3/12 sm:w-80 xsm:w-72 "
         >
           Continue
         </button>

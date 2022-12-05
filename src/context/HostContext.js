@@ -20,8 +20,11 @@ export const HostProvider = ({ children }) => {
   const [shower, setShower] = useState(false);
   const [tv, setTv] = useState(false);
   const [pets, setPets] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   const exports = {
+    showDetails,
+    setShowDetails,
     fullName,
     setFullName,
     phone,

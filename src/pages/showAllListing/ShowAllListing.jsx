@@ -69,7 +69,7 @@ const ShowAllListing = () => {
 
           <div
             key={list.id}
-            className="px-6 py-4 rounded-md cursor-pointer xsm:px-3 listing bg-darkGreen "
+            className="px-6 py-4 duration-200 ease-in rounded-md cursor-pointer xsm:px-3 listing bg-darkGreen hover:bg-oliveGreen"
             onClick={() => {
               navigate("/showListingDyn", {
                 state: { id: list.id },
@@ -81,7 +81,7 @@ const ShowAllListing = () => {
               src={houseListing}
               alt=""
             />
-            <h1 className="mt-3 text-2xl text-white">{list.fullName}</h1>
+            <h1 className="mt-3 text-xl text-white">{list.fullName}</h1>
 
             {/* city details */}
 
