@@ -19,6 +19,7 @@ const ShowListing = () => {
   const [error, setError] = useState("");
   const { showDetails, setShowDetails } = useHost();
   const { user } = useAuth();
+  
 
   const getListing = async () => {
     setLoading(true);

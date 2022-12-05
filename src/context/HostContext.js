@@ -21,6 +21,7 @@ export const HostProvider = ({ children }) => {
   const [tv, setTv] = useState(false);
   const [pets, setPets] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [created, setCreated] = useState(false);
 
   const exports = {
     showDetails,
@@ -51,6 +52,8 @@ export const HostProvider = ({ children }) => {
     setTv,
     pets,
     setPets,
+    created,
+    setCreated
   };
   return (
     <HostContext.Provider value={exports}>{children}</HostContext.Provider>

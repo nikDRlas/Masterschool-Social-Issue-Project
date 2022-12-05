@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import LogedNavbar from "../../components/navbar/LogedNavbar";
 import { useAuth } from "../../context/AuthContext";
+import { useHost } from "../../context/HostContext";
+import { useEffect, useState } from "react";
+import { db, doc, getDoc } from "../../utils/firebase";
+
+import LogedNavbar from "../../components/navbar/LogedNavbar";
 import Navbar from "../../components/navbar/Navbar";
 import howitwork from "../../images/howitwork.png";
 import snirPhoto from "../../images/snir.png";
@@ -10,7 +14,27 @@ import ronenPhoto from "../../images/ronen.png";
 const Main = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const { fullName, created, setCreated } = useHost();
+  const checkListing = async () => {
+    try {
+      const docRef = doc(db, "listings", user?.uid);
+      const docSnap = await getDoc(docRef);
+      console.log('hi')
+      if (docSnap.exists()) {
+        setCreated(true);
+      }
+      else{
+        setCreated(false)
+      }
+    } catch (e) {
+      // doc.data() will be undefined in this case
+    }
+  };
 
+  useEffect(() => {
+    checkListing();
+  }, [user])
+  
   const scrollToSection = (section) => {
     document
       .querySelector(`.${section}`)
@@ -37,7 +61,7 @@ const Main = () => {
             </h2>
           </div>
           <div className="flex flex-col items-center justify-center gap-12 mt-12 button-container pb-28">
-            <button
+            {!created ? <button
               onClick={() => {
                 if (user) {
                   navigate("/addlisting");
@@ -48,7 +72,18 @@ const Main = () => {
               className="h-20 text-4xl font-medium text-center duration-200 ease-in rounded-lg hover:text-white hover:bg-oliveGreen w-80 bg-darkGreen lg:w-96 sm:w-72 xsm:w-56"
             >
               Host
-            </button>
+            </button> : <button
+              onClick={() => {
+                if (user) {
+                  navigate("/showlisting");
+                } else {
+                  navigate("/signin");
+                }
+              }}
+              className="h-20 text-4xl font-medium text-center duration-200 ease-in rounded-lg hover:text-white hover:bg-oliveGreen w-80 bg-darkGreen lg:w-96 sm:w-72 xsm:w-56"
+            >
+              Host (see your listing)
+            </button> }
             <button
               onClick={() => {
                 if (user) {
